@@ -825,7 +825,8 @@ void
 xloadalpha(void)
 {
 	float const usedAlpha = focused ? alpha : alphaUnfocus;
-	if (opt_alpha) alpha = strtof(opt_alpha, NULL);
+	if (opt_alpha) 
+    alpha = strtof(opt_alpha, NULL);
 	dc.col[defaultbg].color.alpha = (unsigned short)(0xffff * usedAlpha);
 	dc.col[defaultbg].pixel &= 0x00FFFFFF;
 	dc.col[defaultbg].pixel |= (unsigned char)(0xff * usedAlpha) << 24;
